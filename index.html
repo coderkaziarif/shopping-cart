@@ -26,11 +26,11 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <button id="deductPhone" class="btn btn-default"><i class="fas fa-minus"></i></button>
                            <input id="countPhone" type="text" class="form-control text-center" value="1">
                            <button id="addPhone" class="btn btn-default"><i class="fas fa-plus "></i></button>
                         </div>
-                        <h5>$ <span id="phoneAmount">1219</span></h5>
+                        <h5>$ <span id="phonePrice">1219</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -82,26 +82,31 @@
    <!-- JS Started -->
    
    <script>
-      // Phone event handler....
-      const phoneBtn = document.getElementById("addPhone");
-      phoneBtn.addEventListener('click', function(){
+      // Phone event handler(Plus section)....
+      const plusBtn = document.getElementById("addPhone");
+      plusBtn.addEventListener('click', function(){
          // sum up phone number....
          const countPhone = document.getElementById('countPhone').value;
          const countPhoneNumber = parseFloat(countPhone) + 1;
-         // const doublePhone = countPhoneNumber + 1;
+         
          document.getElementById('countPhone').value = countPhoneNumber;
 
-         // count total phone amount
-         const phoneAmount = document.getElementById("phoneAmount").innerText;
-         const countPhoneAmount = parseFloat(phoneAmount) + 1219;
-         document.getElementById("phoneAmount").innerText = countPhoneAmount;
+         // count total phone price
+         const phonePrice = document.getElementById("phonePrice").innerText;
+         const countPhonePrice = parseFloat(phonePrice) + 1219;
+         document.getElementById("phonePrice").innerText = countPhonePrice;
 
-         // deduct phone number....
-         
-
-         
-         
+               
       })
+
+      // Phone event handler(Minus section)....
+      const minusBtn = document.getElementById("deductPhone");
+      minusBtn.addEventListener('click', function(){
+         // deduct phone number....  
+         
+
+      })
+
 
    </script>
 </body>

@@ -82,6 +82,7 @@
    <!-- JS Started -->
    
    <script>
+
       // Phone event handler(Plus section)....
       const plusBtn = document.getElementById("addPhone");
       plusBtn.addEventListener('click', function(){
@@ -103,9 +104,16 @@
       const minusBtn = document.getElementById("deductPhone");
       minusBtn.addEventListener('click', function(){
          // deduct phone number....  
-         
+         const countPhone = document.getElementById('countPhone').value;
+         const countPhoneNumber = parseFloat(countPhone) - 1;
 
-      })
+         document.getElementById('countPhone').value = countPhoneNumber;
+
+         // deduct total phone price
+         const phonePrice = document.getElementById("phonePrice").innerText;
+         const deductPhonePrice = parseFloat(phonePrice) - 1219;
+         document.getElementById("phonePrice").innerText = deductPhonePrice;
+       })
 
 
    </script>

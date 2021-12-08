@@ -44,12 +44,12 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="deductPhoneCase" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="countPhoneCase" type="text" class="form-control text-center" value="1">
+                           <button id="addPhoneCase" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$59</h5>
+                        <h5>$ <span id="casePrice">59</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -86,6 +86,7 @@
       // Phone event handler(Plus section)....
       const plusBtn = document.getElementById("addPhone");
       plusBtn.addEventListener('click', function(){
+
          // sum up phone number....
          const countPhone = document.getElementById('countPhone').value;
          const countPhoneNumber = parseFloat(countPhone) + 1;
@@ -96,13 +97,13 @@
          const phonePrice = document.getElementById("phonePrice").innerText;
          const countPhonePrice = parseFloat(phonePrice) + 1219;
          document.getElementById("phonePrice").innerText = countPhonePrice;
-
-               
+              
       })
 
       // Phone event handler(Minus section)....
       const minusBtn = document.getElementById("deductPhone");
       minusBtn.addEventListener('click', function(){
+
          // deduct phone number....  
          const countPhone = document.getElementById('countPhone').value;
          const countPhoneNumber = parseFloat(countPhone) - 1;
@@ -114,6 +115,22 @@
          const deductPhonePrice = parseFloat(phonePrice) - 1219;
          document.getElementById("phonePrice").innerText = deductPhonePrice;
        })
+
+       // Phone case event handler(Plus section)....
+         const plusBtn2 = document.getElementById("addPhoneCase");
+         plusBtn2.addEventListener("click", function(){
+
+             // sum up phone case number....
+             const countPhoneCase = document.getElementById("countPhoneCase").value;
+             const countPhoneCaseNumber = parseFloat(countPhoneCase) + 1;
+             document.getElementById("countPhoneCase").value = countPhoneCaseNumber;
+
+             // count total phone case price....
+             const casePrice = document.getElementById("casePrice").innerText;
+             const casePriceNumber = parseFloat(casePrice) + 59;
+             document.getElementById("casePrice").innerText = casePriceNumber;
+
+         })
 
 
    </script>

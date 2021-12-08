@@ -83,16 +83,17 @@
    
    <script>
 
-      // Phone event handler(Plus section)....
+      // Phone event handler(Plus button)....
       const plusBtn = document.getElementById("addPhone");
       plusBtn.addEventListener('click', function(){
 
          // sum up phone quantity....
-         const countPhone = document.getElementById('countPhone').value;
-         const countPhoneNumber = parseFloat(countPhone) + 1;
-         
-         document.getElementById('countPhone').value = countPhoneNumber;
+            sumUpQuantity('countPhone')
+         // const countPhone = document.getElementById('countPhone').value;
+         // const countPhoneNumber = parseFloat(countPhone) + 1;
+         // document.getElementById('countPhone').value = countPhoneNumber;
 
+   
          // count total phone price
          const phonePrice = document.getElementById("phonePrice").innerText;
          const countPhonePrice = parseFloat(phonePrice) + 1219;
@@ -100,15 +101,15 @@
               
       })
 
-      // Phone event handler(Minus section)....
+      // Phone event handler(Minus button)....
       const minusBtn = document.getElementById("deductPhone");
       minusBtn.addEventListener('click', function(){
 
          // deduct phone quantity....  
-         const countPhone = document.getElementById('countPhone').value;
-         const countPhoneNumber = parseFloat(countPhone) - 1;
-
-         document.getElementById('countPhone').value = countPhoneNumber;
+            deductQuantity("countPhone")
+         // const countPhone = document.getElementById('countPhone').value;
+         // const countPhoneNumber = parseFloat(countPhone) - 1;
+         // document.getElementById('countPhone').value = countPhoneNumber;
 
          // deduct total phone price
          const phonePrice = document.getElementById("phonePrice").innerText;
@@ -117,15 +118,17 @@
 
        })
 
-       // Phone case event handler(Plus section)....
+       // Phone case event handler(Plus button)....
          const plusBtn2 = document.getElementById("addPhoneCase");
          plusBtn2.addEventListener("click", function(){
 
              // sum up phone case quantity....
-             const countPhoneCase = document.getElementById("countPhoneCase").value;
-             const countPhoneCaseNumber = parseFloat(countPhoneCase) + 1;
-             document.getElementById("countPhoneCase").value = countPhoneCaseNumber;
+                sumUpQuantity("countPhoneCase")
+            //  const countPhoneCase = document.getElementById("countPhoneCase").value;
+            //  const countPhoneCaseNumber = parseFloat(countPhoneCase) + 1;
+            //  document.getElementById("countPhoneCase").value = countPhoneCaseNumber;
 
+         
              // count total phone case price....
              const casePrice = document.getElementById("casePrice").innerText;
              const casePriceNumber = parseFloat(casePrice) + 59;
@@ -133,14 +136,15 @@
 
          })
 
-         // Phone case event handler(Minus section)....
+         // Phone case event handler(Minus button)....
             const minusBtn2 = document.getElementById("deductPhoneCase");
             minusBtn2.addEventListener("click", function(){
 
                // deduct phone case quantity....
-               const countPhoneCase = document.getElementById("countPhoneCase").value;
-               const countPhoneCaseNumber = parseFloat(countPhoneCase) - 1;
-               document.getElementById("countPhoneCase").value = countPhoneCaseNumber;
+                  deductQuantity("countPhoneCase")
+               // const countPhoneCase = document.getElementById("countPhoneCase").value;
+               // const countPhoneCaseNumber = parseFloat(countPhoneCase) - 1;
+               // document.getElementById("countPhoneCase").value = countPhoneCaseNumber;
 
                // deduct total phone case price....
                const casePrice = document.getElementById("casePrice").innerText;
@@ -148,6 +152,22 @@
                document.getElementById("casePrice").innerText = casePriceNumber;
 
             })
+
+            // function only for all plus button.....
+            function sumUpQuantity(id){
+               const count = document.getElementById(id).value;
+               const countNumber = parseFloat(count) + 1;
+               document.getElementById(id).value = countNumber;
+
+            }
+
+            // function only for all minus button.....
+            function deductQuantity(id){
+               const deduct = document.getElementById(id).value;
+               const deductNumber = parseFloat(deduct) - 1;
+               document.getElementById(id).value = deductNumber;
+               
+            }
 
 
    </script>
